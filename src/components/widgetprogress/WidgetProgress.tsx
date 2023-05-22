@@ -1,20 +1,21 @@
 import { useAppSelector } from '../../store/hooks';
-import { todoProcessPercent } from '../../store/todoProcessPercent/todoProcessPercent';
 import './WidgetProgress.css';
 
-function WidgetProgress() {
-  const progresspercent = useAppSelector(todoProcessPercent);
+interface WidgetProgressProps {
+  percent: number;
+}
 
+function WidgetProgress({ percent }: WidgetProgressProps) {
   return (
     <div className='widgetProgress-root'>
       <div
         className='widgetProgress-mainline'
         style={{
-          width: `${progresspercent}%`,
-          opacity: progresspercent === 0 ? 0 : 1,
+          width: `${percent}%`,
+          opacity: percent === 0 ? 0 : 1,
         }}
       >
-        {Math.floor(progresspercent)}%
+        {Math.floor(percent)}%
       </div>
     </div>
   );

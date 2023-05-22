@@ -11,7 +11,6 @@ import DeleteModal from './components/deleteModal/DeleteModal';
 import CreateModal from './components/createModal/CreateModal';
 import WidgetProgress from './components/widgetprogress/WidgetProgress';
 import './App.css';
-import { setTodoProcessPercent } from './store/todoProcessPercent/todoProcessPercent';
 
 function App() {
   const todo = useAppSelector(todoData);
@@ -19,6 +18,7 @@ function App() {
   const [deleteModalShow, setDeleteModalShow] = useState(false);
   const [createModalShow, setCreateModalShow] = useState(false);
   const [currentTodoItemIndex, setCurrentTodoItemIndex] = useState(0);
+  const [processPercent, setProcessPercent] = useState(0);
 
   const handleCheck = (currentItemId: number) => {
     dispatch(checkedTodoItem(currentItemId));
@@ -57,8 +57,8 @@ function App() {
 
   useEffect(() => {
     const total = todo?.length;
-    const count = todo?.filter((todo) => todo.process).length;
-    dispatch(setTodoProcessPercent((count / total) * 100));
+    const count = todo?.filter((todo: TodoType) => todo.process).length;
+    setProcessPercent((count / total) * 100);
   }, [todo]);
 
   return (
@@ -70,7 +70,7 @@ function App() {
             + Create
           </div>
         </div>
-        <WidgetProgress />
+        <WidgetProgress percent={processPercent} />
         {todo.map((item: TodoType, index: number) => {
           return (
             <TodoItem
