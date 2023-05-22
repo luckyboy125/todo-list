@@ -1,0 +1,152 @@
+.todoItem {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  box-shadow: 0px 5px 25px rgba(117, 179, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px 20px 14px 18px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  opacity: 1;
+}
+
+.todoItem.checked {
+  opacity: 0.4;
+}
+
+.todoItem .circleIcon {
+  position: relative;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  margin-right: 17px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todoItem .circleIcon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(270deg, #6ab4ff 0%, #c2a6ff 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.todoItem .circleIcon img {
+  width: 13px;
+  height: 13px;
+}
+
+.todoItem .todoItemContent {
+  flex-grow: 1;
+}
+
+.todoItem .todoItemContent .title {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #ffffff;
+  text-decoration: initial;
+}
+
+.todoItem .todoItemContent .title.titleChecked {
+  text-decoration: line-through;
+}
+
+.todoItem .todoItemContent .des {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  margin: 10px 0;
+  text-decoration: initial;
+}
+
+.todoItem .todoItemContent .des.desChecked {
+  text-decoration: line-through;
+}
+
+.todoItem .todoItemContent .todoAction :nth-child(2).todoActionItem .itemBtn {
+  background: #75b3ff33;
+}
+
+.todoItem
+  .todoItemContent
+  .todoAction
+  :nth-child(2).todoActionItem
+  .itemBtn
+  .btnName {
+  color: #75b3ff;
+}
+
+.todoItem .todoItemContent .todoAction :last-child.todoActionItem {
+  margin-bottom: 0;
+}
+
+.todoItem .todoItemContent .todoAction .todoActionItem {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.todoItem .todoItemContent .todoAction .todoActionItem .title {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  width: 75px;
+}
+
+.todoItem .todoItemContent .todoAction .todoActionItem .itemBtn {
+  margin-right: 20px;
+  background: #37ce4a33;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  margin-left: 5px;
+}
+
+.todoItem .todoItemContent .todoAction .todoActionItem .itemBtn .btnName {
+  flex-grow: 1;
+  text-align: center;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #37ce4a;
+}
+.todoItem .todoItemContent .todoAction .todoActionItem .itemBtn i {
+  width: 11px;
+  font-size: 11px;
+  line-height: 8px;
+}
+
+.todoItem .deleteIcon i {
+  color: #adb1b3;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.todoItem .deleteIcon.checked i {
+  cursor: no-drop;
+}

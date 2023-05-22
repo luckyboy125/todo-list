@@ -1,0 +1,53 @@
+.deleteModalRoot {
+  min-width: 489px;
+  padding: 48px 30px 25px;
+  background: #54616f;
+  border-radius: 20px;
+  position: fixed;
+}
+
+.deleteModalRoot .closeIcon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.deleteModalRoot .des {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.deleteModalRoot .btnRoot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.deleteModalRoot .btnRoot .modalBtn:last-child {
+  margin-right: 0;
+}
+
+.deleteModalRoot .btnRoot .modalBtn {
+  width: 113px;
+  height: 34px;
+  background: #75b3ff;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  cursor: pointer;
+}
