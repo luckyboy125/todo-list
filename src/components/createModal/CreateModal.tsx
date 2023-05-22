@@ -7,7 +7,6 @@ interface CreateModalProps {
   show: boolean;
   onClose: () => void;
   onYes: (title: string, des: string) => void;
-  description: string;
 }
 
 function CreateModal({ show, onClose, onYes }: CreateModalProps) {

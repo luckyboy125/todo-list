@@ -99,7 +99,6 @@ function App() {
       <CreateModal
         show={createModalShow}
         onClose={() => setCreateModalShow(false)}
-        description='Are you sure you want to delete the item?'
         onYes={handleCreate}
       />
     </>
